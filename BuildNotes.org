@@ -1,0 +1,6 @@
+* Build Notes For Instagram Clone
+** Model
+** View
+** Controller
+** Gem
+** Misc
