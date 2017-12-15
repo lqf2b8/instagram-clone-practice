@@ -1,6 +1,26 @@
 * Build Notes For Instagram Clone
+** General Description
+*** The goal is to get Rails practice by building an Instagram clone. I am only concerned with getting the app up and running and not making it look pretty with CSS and Js. Users should be able to signup/login/logout and should be able to login from 3rd party (can use Devise gem). Users should be able to upload pictures to their profile. Users should be able to comment on other users pictures. Users should be able to "like" other users pictures. My model structer must include at least one join table w/ a has_many through. The class must contain at least on class level scope method (initial idea is most "liked" picture. Must contain at least one nested form that writes to an associated model (no clue on this one yet. Nested forms are hard). App should be RESTFUL. Forms should display validation errors with a fields_with_errors class that display in the correct views. App should be DRY (thin controlers and views that use helpers and partials to be logicless). Do not use Scaffolding.
 ** Model
+*** Pictures
+**** title as a string
+**** description as a text
+*** User
+**** Notes on user model
+*** Comments
+**** Notes on comments model 
 ** View
+*** Pictures
+**** Index
 ** Controller
+*** Pictures
+**** index
+** Routes
+*** Pictures
+
 ** Gem
+*** haml
+*** simple_form
+*** bootstrap-sass
+*** devise
 ** Misc
