@@ -1,0 +1,15 @@
+<!--had to use multipart since uploading pictures -->
+<%= simple_form_for @picture, html: { multipart: true } do |f| %>
+    <% if @picture.errors.any? %>
+        <h2><%= pluralize(@picture.errors.count, 'error') %></h2>
+        <ul><% @picture.errors.full_messages.each do |msg| %></ul>
+            <li><%= msg %></li>
+        <% end %>
+    <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+<% end %>
+
+    
