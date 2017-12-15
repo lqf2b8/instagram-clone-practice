@@ -1,6 +1,17 @@
 * Build Notes For Instagram Clone
 ** General Description
-*** The goal is to get Rails practice by building an Instagram clone. I am only concerned with getting the app up and running and not making it look pretty with CSS and Js. Users should be able to signup/login/logout and should be able to login from 3rd party (can use Devise gem). Users should be able to upload pictures to their profile. Users should be able to comment on other users pictures. Users should be able to "like" other users pictures. My model structer must include at least one join table w/ a has_many through. The class must contain at least on class level scope method (initial idea is most "liked" picture. Must contain at least one nested form that writes to an associated model (no clue on this one yet. Nested forms are hard). App should be RESTFUL. Forms should display validation errors with a fields_with_errors class that display in the correct views. App should be DRY (thin controlers and views that use helpers and partials to be logicless). Do not use Scaffolding.
+*** The goal is to get Rails practice by building an Instagram clone. I am only concerned with getting the app up and running and not making it look pretty with CSS and Js.
+*** TODO Users should be able to signup/login/logout and should be able to login from 3rd party (can use Devise gem). 
+*** TODO Users should be able to upload pictures to their profile.
+*** TODO Users should be able to comment on other users pictures.
+*** TODO Users should be able to "like" other users pictures.
+*** TODO My model structer must include at least one join table w/ a has_many through.
+*** TODO The class must contain at least on class level scope method (initial idea is most "liked" picture.
+*** TODO Must contain at least one nested form that writes to an associated model (no clue on this one yet. Nested forms are hard).
+*** TODO App should be RESTFUL.
+*** TODO Forms should display validation errors with a fields_with_errors class that display in the correct views.
+*** TODO App should be DRY (thin controlers and views that use helpers and partials to be logicless).
+*** TODO Do not use Scaffolding.
 ** Model
 *** Pictures
 **** title as a string
@@ -17,10 +28,10 @@
 **** index
 ** Routes
 *** Pictures
-
+    
 ** Gem
-*** haml
 *** simple_form
 *** bootstrap-sass
 *** devise
 ** Misc
+*** Need to find a gem that will help with picture upload and maybe a walk through on how to do it. If all else fails schedule an instructor meeting 
