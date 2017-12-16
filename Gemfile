@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'faker'
 gem 'friendly_id'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'
