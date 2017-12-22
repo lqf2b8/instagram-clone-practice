@@ -2,18 +2,22 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   
   def index
-    @pictures = Picture.all.order('created_at DESC')
+    if params[:user_id]
+      @pictures = User.find(params[:user_id]).pictures.order('created_at DESC')
+    else
+      @pictures = Picture.all.order('created_at DESC')
+    end
   end
 
   def show
   end
 
   def new
-    @picture = Picture.new
+    @picture = current_user.pictures.build
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: 'Picture was seccessfully created.' }
@@ -43,6 +47,10 @@ class PicturesController < ApplicationController
     end
   end
 
+
+ 
+  
+
   private
   
   def set_picture
@@ -50,7 +58,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:title, :description)
+    params.require(:picture).permit(:title, :description, :user_id) #added user_id for nested form
   end
   
     

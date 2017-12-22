@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pictures
+  has_many :friendships
+  has_many :friends, through: :frinedships
+
+
+  
 end
+
+

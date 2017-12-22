@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>InstagramClonePractice</title>
+<html></html>
+<head>
+    <title>Iron Brag</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-      <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, class: 'alert alert-info' %>
-      <% end  %>
-      <%= yield %>
-  </body>
-</html>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-brand">
+                <%= link_to "Iron Brag", root_path %>
+            </div>
+            <% if user_signed_in? %>
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <%= link_to "My Videos", user_pictures_path(current_user.id) %>
+                    <li>
+                        <%= link_to "Post Video", new_picture_path
+ %>
+                    </li>
+                    <li>
+                        <%= link_to "Friends" %> #user_friendships__path(friend_id: current_user.id) %>
+                    </li>
+                    <li>
+                        <%= link_to "Settings", edit_user_registration_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                    </li>
+                </ul>
+            <% else %>
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <%= link_to "Join", new_user_registration_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Log In", new_user_session_path %>
+                    </li>
+                </ul>
+            <% end %>
+        </div>
+    </nav>
+    <div class="container">
+        <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, class: "alert alert-info" %>
+        <% end %>
+        <%= yield %>
+    </div>
+</body>
