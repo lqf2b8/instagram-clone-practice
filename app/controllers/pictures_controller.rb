@@ -43,7 +43,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to pictures_url, notice: 'Picture was seccessfully destroyed.' }
+      format.html { redirect_to user_pictures_path(current_user.id), notice: 'Picture was seccessfully destroyed.' }
     end
   end
 
