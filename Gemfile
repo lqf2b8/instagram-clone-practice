@@ -22,6 +22,8 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'faker'
 gem 'friendly_id'
 gem 'simple_form'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'rspec-rails'

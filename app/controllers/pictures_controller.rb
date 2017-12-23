@@ -58,7 +58,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:title, :description, :user_id) #added user_id for nested form
+    params.require(:picture).permit(:title, :description, :video) #added user_id for nested form
   end
   
     
