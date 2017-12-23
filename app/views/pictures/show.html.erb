@@ -17,15 +17,17 @@
                     <div class="col-md-6">
                         <p class="user">
                             by
-                            <!%= @picture.user.email %>
+                            <%= @picture.user.email %>
                         </p>
                     </div>
-                    <div class="col-md-6">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="btn-group pull-right">
                             
                             <% if user_signed_in? %>
-                                <%= link_to "Add Friend", friendships_path(current_user.id), method: :post, class: "btn btn-info" %>
-                                <%= link_to "Edit Picture", edit_picture_path, class: "btn btn-info" %>
+                                <%= link_to "Friend", friendships_path(current_user.id), method: :post, class: "btn btn-info" %>
+                                <%= link_to "Edit", edit_picture_path, class: "btn btn-info" %>
                                 <%= link_to "Delete", picture_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
                             <% end %>
                         </div>

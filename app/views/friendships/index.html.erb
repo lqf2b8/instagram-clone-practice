@@ -1,3 +1,8 @@
-<% @friendships.each do |pic|  %>
-    <h2><%= link_to pic.title, pic %> </h2>
-<% end  %>
+<% @friendships.each do |friend|  %>
+    <% friend.pictures.each do |pic| %>
+        <h2><%= link_to friend.email, user_pictures_path(friend.id) %> <%= link_to pic.title, pic %></h2>
+    <% end  %>
+<% end %>
+
+
+

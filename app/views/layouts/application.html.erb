@@ -21,7 +21,7 @@
  %>
                     </li>
                     <li>
-                        <%= link_to "Friends" %> #user_friendships__path(friend_id: current_user.id) %>
+                        <%= link_to "Friends", user_friendships_path(current_user.id) %>
                     </li>
                     <li>
                         <%= link_to "Settings", edit_user_registration_path %>
